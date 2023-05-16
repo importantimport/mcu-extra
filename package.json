@@ -31,7 +31,8 @@
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "lint": "eslint .",
-    "format": "eslint . --fix"
+    "format": "eslint . --fix",
+    "release": "pnpm build && pnpm publish --no-git-checks --access public"
   },
   "peerDependencies": {
     "@material/material-color-utilities": "^0.2.6"

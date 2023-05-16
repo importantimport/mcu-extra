@@ -58,7 +58,7 @@ jobs:
           version: pnpm changeset version
           commit: 'chore: 🔖 update versions'
           title: 'chore: 🔖 update versions'
-          publish: pnpm build && pnpm publish --no-git-checks --access public
+          publish: pnpm release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
