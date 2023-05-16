@@ -47,17 +47,17 @@ applyTheme(theme, {target: document.body, dark: systemDark})
 
 #### Features
 
-- Tone-based Surfaces (https://github.com/material-foundation/material-color-utilities/issues/98)
-- `applyTheme`: selectable color formats
+- `Scheme & CorePalette`: Tone-based Surfaces (https://github.com/material-foundation/material-color-utilities/issues/98)
+- `applyTheme`: Selectable color formats
 
 #### Changes
 
-- `applyTheme`: set without suffix variables only when `brightnessSuffix` is `false`
+- `applyTheme`: Set without suffix variables only when `brightnessSuffix` is `false`
 
 #### Bug fixes
 
-- Fix onErrorContainer in dark scheme (https://github.com/material-foundation/material-color-utilities/issues/62)
-- Remove unwanted additional paletteKey property from color token with paletteTones (https://github.com/material-foundation/material-color-utilities/pull/93)
+- `Scheme`: Fix onErrorContainer in dark scheme (https://github.com/material-foundation/material-color-utilities/issues/62)
+- `applyTheme`: Remove unwanted additional paletteKey property from color token with paletteTones (https://github.com/material-foundation/material-color-utilities/pull/93)
 
 ### `@importantimport/material-color-utilities`
 
