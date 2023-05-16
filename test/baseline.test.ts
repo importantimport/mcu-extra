@@ -25,4 +25,7 @@ test('Baseline color scheme tokens', () => {
   expect(hexFromArgb(theme.schemes.light.surfaceContainerLowest)).toBe('#ffffff')
   expect(hexFromArgb(theme.schemes.light.surfaceContainerHigh)).toBe('#ece6ee')
   expect(hexFromArgb(theme.schemes.light.surfaceContainerHighest)).toBe('#e6e0e9')
+  // surface tint
+  expect(hexFromArgb(theme.schemes.light.surfaceTint)).toBe('#6750a4')
+  expect(hexFromArgb(theme.schemes.dark.surfaceTint)).toBe('#cfbcff')
 })

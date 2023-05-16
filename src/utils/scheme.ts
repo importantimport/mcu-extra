@@ -45,7 +45,8 @@ type SchemeProperties = {
   surfaceContainerLow: number,
   surfaceContainer: number,
   surfaceContainerHigh: number,
-  surfaceContainerHighest: number
+  surfaceContainerHighest: number,
+  surfaceTint: number
 }
 
 export class Scheme implements Pick<MCUScheme, keyof MCUScheme> {
@@ -195,6 +196,11 @@ export class Scheme implements Pick<MCUScheme, keyof MCUScheme> {
     return this.props.surfaceContainerLowest
   }
 
+  /** extra */
+  get surfaceTint(): number {
+    return this.props.surfaceTint
+  }
+
   static light(argb: number): Scheme {
     return Scheme.lightFromCorePalette(CorePalette.of(argb))
   }
@@ -233,6 +239,11 @@ export class Scheme implements Pick<MCUScheme, keyof MCUScheme> {
       surfaceContainerLow: core.n1.tone(96),
       surfaceContainerLowest: core.n1.tone(100),
       surfaceDim: core.n1.tone(87),
+      /**
+       * Equal to Primary
+       * @see {@link https://m3.material.io/styles/color/the-color-system/tokens}
+       */
+      surfaceTint: core.a1.tone(40),
     })
   }
 
@@ -256,6 +267,11 @@ export class Scheme implements Pick<MCUScheme, keyof MCUScheme> {
       surfaceContainerLow: core.n1.tone(10),
       surfaceContainerLowest: core.n1.tone(4),
       surfaceDim: core.n1.tone(6),
+      /**
+       * Equal to Primary
+       * @see {@link https://m3.material.io/styles/color/the-color-system/tokens}
+       */
+      surfaceTint: core.a1.tone(80),
     })
   }
 
