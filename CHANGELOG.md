@@ -1,5 +1,11 @@
 # mcu-extra
 
+## 0.0.4
+
+### Patch Changes
+
+- [`70bc8d2`](https://github.com/importantimport/mcu-extra/commit/70bc8d20fe3c5f9e14e632277c3618f7c1b39507) Thanks [@kwaa](https://github.com/kwaa)! - Fix: export applyTheme util
+
 ## 0.0.3
 
 ### Patch Changes
