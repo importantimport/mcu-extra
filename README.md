@@ -19,8 +19,8 @@ Just use it as usual, but import the [available utils](/src/index.ts) from `mcu-
 ### Theming
 
 ```ts
-import { argbFromHex, applyTheme } from '@material/material-color-utilities'
-import { themeFromSourceColor } from 'mcu-extra'
+import { argbFromHex } from '@material/material-color-utilities'
+import { applyTheme, themeFromSourceColor } from 'mcu-extra'
 
 // Get the theme from a hex color
 const theme = themeFromSourceColor(argbFromHex('#f82506'), [
@@ -48,10 +48,16 @@ applyTheme(theme, {target: document.body, dark: systemDark})
 #### Features
 
 - Tone-based Surfaces (https://github.com/material-foundation/material-color-utilities/issues/98)
+- `applyTheme`: selectable color formats
+
+#### Changes
+
+- `applyTheme`: set no suffix variables only when `brightnessSuffix` is `false`
 
 #### Bug fixes
 
 - Fix onErrorContainer in dark scheme (https://github.com/material-foundation/material-color-utilities/issues/62)
+- Remove unwanted additional paletteKey property from color token with paletteTones (https://github.com/material-foundation/material-color-utilities/pull/93)
 
 ### `@importantimport/material-color-utilities`
 
