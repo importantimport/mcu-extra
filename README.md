@@ -52,7 +52,7 @@ applyTheme(theme, {target: document.body, dark: systemDark})
 
 #### Changes
 
-- `applyTheme`: set no suffix variables only when `brightnessSuffix` is `false`
+- `applyTheme`: set without suffix variables only when `brightnessSuffix` is `false`
 
 #### Bug fixes
 
