@@ -1,0 +1,37 @@
+
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/api-extractor/v7/api-extractor.schema.json",
+  "apiReport": {
+    "enabled": false,
+    "reportFileName": "mcu-extra.api.md",
+    "reportFolder": "<projectFolder>/dist/api-extractor/"
+  },
+  "bundledPackages": ["mcu-extra"],
+  "compiler": {},
+  "docModel": {
+    "apiJsonFilePath": "<projectFolder>/dist/api-extractor/<unscopedPackageName>.api.json",
+    "enabled": true
+  },
+  "dtsRollup": {
+    "enabled": false
+  },
+  "mainEntryPointFilePath": "<projectFolder>/dist/index.d.ts",
+  "messages": {
+    "compilerMessageReporting": {
+      "default": {
+        "logLevel": "warning"
+      }
+    },
+    "extractorMessageReporting": {
+      "default": {
+        "logLevel": "warning"
+      }
+    },
+    "tsdocMessageReporting": {
+      "default": {
+        "logLevel": "warning"
+      }
+    }
+  },
+  "tsdocMetadata": {}
+}

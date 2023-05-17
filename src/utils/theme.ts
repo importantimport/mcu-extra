@@ -3,6 +3,7 @@ import { type CustomColor, customColor, type CustomColorGroup, sourceColorFromIm
 import { CorePalette } from './core-palette'
 import { Scheme } from './scheme'
 
+/** @beta */
 export type Theme = {
   source: number
   schemes: {
@@ -20,6 +21,7 @@ export type Theme = {
   customColors: CustomColorGroup[]
 }
 
+/** @public */
 export const themeFromSourceColor = (source: number, customColors: CustomColor[] = []): Theme => {
   const palette = CorePalette.of(source)
   return {
@@ -40,6 +42,7 @@ export const themeFromSourceColor = (source: number, customColors: CustomColor[]
   }
 }
 
+/** @public */
 export const themeFromImage = async (image: HTMLImageElement, customColors: CustomColor[] = []) =>
   await sourceColorFromImage(image)
     .then(source => themeFromSourceColor(source, customColors))

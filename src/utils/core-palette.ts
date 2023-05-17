@@ -5,6 +5,7 @@ import {
   TonalPalette,
 } from '@material/material-color-utilities'
 
+/** @beta */
 export class CorePalette implements MCUCorePalette {
   /** primary */
   a1: TonalPalette

@@ -16,6 +16,7 @@ const setSchemeProperties = (
   }
 }
 
+/** @beta */
 export const applyTheme = (theme: Theme, options?: {
   dark?: boolean,
   target?: HTMLElement,

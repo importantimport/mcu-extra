@@ -49,6 +49,7 @@ type SchemeProperties = {
   surfaceTint: number
 }
 
+/** @beta */
 export class Scheme implements Pick<MCUScheme, keyof MCUScheme> {
   get primary(): number {
     return this.props.primary

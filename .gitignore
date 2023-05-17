@@ -11,6 +11,9 @@ node_modules
 dist
 dist-ssr
 *.local
+docs/.vitepress/dist
+docs/.vitepress/cache
+docs/*.md
 
 # Editor directories and files
 .idea
