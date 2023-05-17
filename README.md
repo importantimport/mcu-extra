@@ -1,6 +1,6 @@
 # MCU Extra
 
-[![npm](https://img.shields.io/npm/v/a2c)](https://www.npmjs.com/package/mcu-extra)
+[![npm](https://img.shields.io/npm/v/mcu-extra)](https://www.npmjs.com/package/mcu-extra)
 ![minified size](https://img.shields.io/bundlephobia/min/mcu-extra)
 ![downloads](https://img.shields.io/npm/dt/mcu-extra)
 
