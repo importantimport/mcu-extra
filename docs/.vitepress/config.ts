@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/mcu-extra/',
   description: 'Additional packages to add new features and bug fixes to Material Color Utilities.',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
