@@ -1,0 +1,14 @@
+name: GitHub Pages
+
+on:
+  push:
+    paths:
+      - .changeset/**
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    uses: importantimport/.github/.github/workflows/pnpm-gh-pages.yml@main
+    with:
+      build_command: pnpm docs:build
+      publish_dir: docs/.vitepress/dist
