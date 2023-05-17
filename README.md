@@ -1,5 +1,9 @@
 # MCU Extra
 
+[![npm](https://img.shields.io/npm/v/a2c)](https://www.npmjs.com/package/mcu-extra)
+![minified size](https://img.shields.io/bundlephobia/min/mcu-extra)
+![downloads](https://img.shields.io/npm/dt/mcu-extra)
+
 Additional packages to add new features and bug fixes to [Material Color Utilities](https://github.com/material-foundation/material-color-utilities).
 
 ## Install
