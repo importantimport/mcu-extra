@@ -41,6 +41,12 @@ const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches
 applyTheme(theme, {target: document.body, dark: systemDark})
 ```
 
+### Documentation
+
+View the documentation here: [https://importantimport.github.io/mcu-extra/](https://importantimport.github.io/mcu-extra/)
+
+It is automatically generated on update using `api-extractor` and `api-documenter`.
+
 ## Comparison
 
 ### `@material/material-color-utilities`
