@@ -1,7 +1,7 @@
 {
   "name": "mcu-extra",
   "type": "module",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Additional packages to add new features and bug fixes to Material Color Utilities.",
   "license": "Apache-2.0",
   "repository": "github:importantimport/mcu-extra",
@@ -25,7 +25,9 @@
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "vite build",
     "test": "vitest",

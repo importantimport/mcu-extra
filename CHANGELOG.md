@@ -1,5 +1,11 @@
 # mcu-extra
 
+## 0.0.5
+
+### Patch Changes
+
+- [`636e61a`](https://github.com/importantimport/mcu-extra/commit/636e61a0ba54a710ce4f42988c1b16a6fc244f31) Thanks [@kwaa](https://github.com/kwaa)! - Fix: background color tone
+
 ## 0.0.4
 
 ### Patch Changes
