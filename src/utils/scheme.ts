@@ -255,6 +255,14 @@ export class Scheme implements Pick<MCUScheme, keyof MCUScheme> {
        * @see {@link https://github.com/material-foundation/material-color-utilities/issues/62}
        */
       onErrorContainer: core.error.tone(90),
+      /* eslint-disable sort-keys-fix/sort-keys-fix */
+      /**
+       * Surface roles in dark theme are slightly darkened
+       * @see {@link https://material.io/blog/tone-based-surface-color-m3}
+       * @see {@link https://m3.material.io/styles/color/the-color-system/tokens}
+       */
+      background: core.n1.tone(6),
+      /* eslint-enable sort-keys-fix/sort-keys-fix */
       /**
        * Surface roles in dark theme are slightly darkened
        * @see {@link https://material.io/blog/tone-based-surface-color-m3}
