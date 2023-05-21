@@ -28,4 +28,10 @@ test('Baseline color scheme tokens', () => {
   // surface tint
   expect(hexFromArgb(theme.schemes.light.surfaceTint)).toBe('#6750a4')
   expect(hexFromArgb(theme.schemes.dark.surfaceTint)).toBe('#cfbcff')
+  // background equal surface
+  expect(theme.schemes.light.background).toBe(theme.schemes.light.surface)
+  expect(theme.schemes.dark.background).toBe(theme.schemes.dark.surface)
+  // surface tint equal primary
+  expect(theme.schemes.light.surfaceTint).toBe(theme.schemes.light.primary)
+  expect(theme.schemes.dark.surfaceTint).toBe(theme.schemes.dark.primary)
 })
