@@ -1,7 +1,8 @@
 import { hexFromArgb, rgbaFromArgb } from '@material/material-color-utilities'
 
-import { Scheme } from './scheme'
 import type { Theme } from './theme'
+
+import { Scheme } from './scheme'
 
 const setSchemeProperties = (
   target: HTMLElement,
@@ -18,11 +19,11 @@ const setSchemeProperties = (
 
 /** @beta */
 export const applyTheme = (theme: Theme, options?: {
-  dark?: boolean,
-  target?: HTMLElement,
   brightnessSuffix?: boolean,
-  paletteTones?: number[],
   colorFormat?: 'hex' | 'rgb'
+  dark?: boolean,
+  paletteTones?: number[],
+  target?: HTMLElement,
 }) => {
   const target = options?.target || document.body
   const isDark = options?.dark ?? false

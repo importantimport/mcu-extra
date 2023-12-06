@@ -1,7 +1,8 @@
 import {
-  CorePalette as MCUCorePalette,
+  // eslint-disable-next-line import/named
   CorePaletteColors,
   Hct,
+  CorePalette as MCUCorePalette,
   TonalPalette,
 } from '@material/material-color-utilities'
 
@@ -13,27 +14,42 @@ export class CorePalette implements MCUCorePalette {
   a2: TonalPalette
   /** tertiary */
   a3: TonalPalette
+  /** error */
+  error: TonalPalette
   /** neutral */
   n1: TonalPalette
   /** neutralVariant */
   n2: TonalPalette
-  /** error */
-  error: TonalPalette
 
-  static of(argb: number): CorePalette {
-    return new CorePalette(argb, false)
-  }
-
-  static contentOf(argb: number): CorePalette {
-    return new CorePalette(argb, true)
-  }
-
-  static fromColors(colors: CorePaletteColors): CorePalette {
-    return CorePalette.createPaletteFromColors(false, colors)
+  private constructor(argb: number, isContent: boolean) {
+    const { chroma, hue } = Hct.fromInt(argb)
+    if (isContent) {
+      this.a1 = TonalPalette.fromHueAndChroma(hue, chroma)
+      this.a2 = TonalPalette.fromHueAndChroma(hue, chroma / 3)
+      this.a3 = TonalPalette.fromHueAndChroma(hue + 60, chroma / 2)
+      this.n1 = TonalPalette.fromHueAndChroma(hue, Math.min(chroma / 12, 4))
+      this.n2 = TonalPalette.fromHueAndChroma(hue, Math.min(chroma / 6, 8))
+    }
+    else {
+      this.a1 = TonalPalette.fromHueAndChroma(hue, Math.max(48, chroma))
+      this.a2 = TonalPalette.fromHueAndChroma(hue, 16)
+      this.a3 = TonalPalette.fromHueAndChroma(hue + 60, 24)
+      /**
+       * The chroma for the neutral palette is increased from 4 to 6
+       * @see {@link https://material.io/blog/tone-based-surface-color-m3}
+       */
+      this.n1 = TonalPalette.fromHueAndChroma(hue, 6)
+      this.n2 = TonalPalette.fromHueAndChroma(hue, 8)
+    }
+    this.error = TonalPalette.fromHueAndChroma(25, 84)
   }
 
   static contentFromColors(colors: CorePaletteColors): CorePalette {
     return CorePalette.createPaletteFromColors(true, colors)
+  }
+
+  static contentOf(argb: number): CorePalette {
+    return new CorePalette(argb, true)
   }
 
   private static createPaletteFromColors(
@@ -64,26 +80,11 @@ export class CorePalette implements MCUCorePalette {
     return palette
   }
 
-  private constructor(argb: number, isContent: boolean) {
-    const { hue, chroma } = Hct.fromInt(argb)
-    if (isContent) {
-      this.a1 = TonalPalette.fromHueAndChroma(hue, chroma)
-      this.a2 = TonalPalette.fromHueAndChroma(hue, chroma / 3)
-      this.a3 = TonalPalette.fromHueAndChroma(hue + 60, chroma / 2)
-      this.n1 = TonalPalette.fromHueAndChroma(hue, Math.min(chroma / 12, 4))
-      this.n2 = TonalPalette.fromHueAndChroma(hue, Math.min(chroma / 6, 8))
-    }
-    else {
-      this.a1 = TonalPalette.fromHueAndChroma(hue, Math.max(48, chroma))
-      this.a2 = TonalPalette.fromHueAndChroma(hue, 16)
-      this.a3 = TonalPalette.fromHueAndChroma(hue + 60, 24)
-      /**
-       * The chroma for the neutral palette is increased from 4 to 6
-       * @see {@link https://material.io/blog/tone-based-surface-color-m3}
-       */
-      this.n1 = TonalPalette.fromHueAndChroma(hue, 6)
-      this.n2 = TonalPalette.fromHueAndChroma(hue, 8)
-    }
-    this.error = TonalPalette.fromHueAndChroma(25, 84)
+  static fromColors(colors: CorePaletteColors): CorePalette {
+    return CorePalette.createPaletteFromColors(false, colors)
+  }
+
+  static of(argb: number): CorePalette {
+    return new CorePalette(argb, false)
   }
 }
