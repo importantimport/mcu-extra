@@ -48,18 +48,18 @@
     "@material/material-color-utilities": "^0.2.6"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "^0.4.8",
-    "@changesets/cli": "^2.26.1",
-    "@importantimport/eslint-config": "^0.0.4",
-    "@material/material-color-utilities": "^0.2.6",
-    "@microsoft/api-documenter": "^7.22.5",
-    "@microsoft/api-extractor": "^7.34.9",
-    "@vitest/coverage-c8": "^0.31.0",
-    "eslint": "^8.40.0",
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.1",
+    "@importantimport/eslint-config": "^0.2.0",
+    "@material/material-color-utilities": "^0.2.7",
+    "@microsoft/api-documenter": "^7.23.13",
+    "@microsoft/api-extractor": "^7.38.4",
+    "@vitest/coverage-c8": "^0.33.0",
+    "eslint": "^8.55.0",
     "npm-run-all": "^4.1.5",
-    "vite": "^4.3.6",
-    "vite-plugin-dts": "^2.3.0",
-    "vitepress": "1.0.0-alpha.75",
-    "vitest": "^0.31.0"
+    "vite": "^5.0.6",
+    "vite-plugin-dts": "^3.6.4",
+    "vitepress": "1.0.0-rc.31",
+    "vitest": "^1.0.1"
   }
 }
