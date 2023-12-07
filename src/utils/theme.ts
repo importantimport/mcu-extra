@@ -1,48 +1,81 @@
-import { type CustomColor, customColor, type CustomColorGroup, sourceColorFromImage, type TonalPalette } from '@material/material-color-utilities'
+import {
+  type CustomColor,
+  type CustomColorGroup,
+  Hct,
+  SchemeContent,
+  SchemeExpressive,
+  SchemeFidelity,
+  SchemeMonochrome,
+  SchemeNeutral,
+  SchemeTonalSpot,
+  SchemeVibrant,
+  type TonalPalette,
+  customColor,
+  sourceColorFromImage,
+} from '@material/material-color-utilities'
 
-import { CorePalette } from './core-palette'
-import { Scheme } from './scheme'
+import { type Scheme, scheme } from './scheme'
 
 /** @beta */
 export type Theme = {
-  source: number
-  schemes: {
-      light: Scheme
-      dark: Scheme
-  }
+  customColors: CustomColorGroup[]
   palettes: {
+      error: TonalPalette
+      neutral: TonalPalette
+      neutralVariant: TonalPalette
       primary: TonalPalette
       secondary: TonalPalette
       tertiary: TonalPalette
-      neutral: TonalPalette
-      neutralVariant: TonalPalette
-      error: TonalPalette
   }
-  customColors: CustomColorGroup[]
+  schemes: {
+    dark: Scheme
+    light: Scheme
+  }
+  source: number
 }
 
+/** @beta */
+export type ExtraThemeOptions = {
+  /**
+   * Available scheme variants.
+   * @see {@link https://github.com/material-foundation/material-color-utilities/blob/main/make_schemes.md#swift-1}
+   */
+  variant?: 'Content' | 'Expressive' | 'Fidelity' | 'Monochrome' | 'Neutral' | 'TonalSpot' | 'Vibrant'
+}
+
+/** @internal */
+export const schemes = {
+  Content: SchemeContent,
+  Expressive: SchemeExpressive,
+  Fidelity: SchemeFidelity,
+  Monochrome: SchemeMonochrome,
+  Neutral: SchemeNeutral,
+  TonalSpot: SchemeTonalSpot,
+  Vibrant: SchemeVibrant,
+} as const
+
 /** @public */
-export const themeFromSourceColor = (source: number, customColors: CustomColor[] = []): Theme => {
-  const palette = CorePalette.of(source)
+export const themeFromSourceColor = (source: number, customColors: CustomColor[] = [], options: ExtraThemeOptions = {}): Theme => {
+  const light = new schemes[options.variant ?? 'TonalSpot'](Hct.fromInt(source), false, 0)
+  const dark = new schemes[options.variant ?? 'TonalSpot'](Hct.fromInt(source), true, 0)
   return {
     customColors: customColors.map(color => customColor(source, color)),
     palettes: {
-      error: palette.error,
-      neutral: palette.n1,
-      neutralVariant: palette.n2,
-      primary: palette.a1,
-      secondary: palette.a2,
-      tertiary: palette.a3,
+      error: light.errorPalette,
+      neutral: light.neutralPalette,
+      neutralVariant: light.neutralVariantPalette,
+      primary: light.primaryPalette,
+      secondary: light.secondaryPalette,
+      tertiary: light.tertiaryPalette,
     },
     schemes: {
-      dark: Scheme.dark(source),
-      light: Scheme.light(source),
+      dark: scheme(dark),
+      light: scheme(light),
     },
     source,
   }
 }
 
 /** @public */
-export const themeFromImage = async (image: HTMLImageElement, customColors: CustomColor[] = []) =>
-  await sourceColorFromImage(image)
-    .then(source => themeFromSourceColor(source, customColors))
+export const themeFromImage = async (image: HTMLImageElement, customColors: CustomColor[] = []) => await sourceColorFromImage(image)
+  .then(source => themeFromSourceColor(source, customColors))

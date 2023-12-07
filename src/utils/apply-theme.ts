@@ -1,16 +1,16 @@
 import { hexFromArgb, rgbaFromArgb } from '@material/material-color-utilities'
 
+import type { Scheme } from './scheme'
 import type { Theme } from './theme'
 
-import { Scheme } from './scheme'
-
+/** @internal */
 const setSchemeProperties = (
   target: HTMLElement,
   scheme: Scheme,
   suffix = '',
   colorFormat?: 'hex' | 'rgb',
 ) => {
-  for (const [key, value] of Object.entries(scheme.toJSON())) {
+  for (const [key, value] of Object.entries(scheme)) {
     const token = key.replaceAll(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
     const color = colorFormat === 'rgb' ? Object.values(rgbaFromArgb(value)).slice(0, -1).join(' ') : hexFromArgb(value)
     target.style.setProperty(`--md-sys-color-${token}${suffix}`, color)
