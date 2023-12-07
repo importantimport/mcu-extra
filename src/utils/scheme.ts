@@ -1,5 +1,6 @@
 import { type DynamicColor, type DynamicScheme, MaterialDynamicColors } from '@material/material-color-utilities'
 
+/** @beta */
 export type Key = keyof Omit<
   typeof MaterialDynamicColors,
   'contentAccentToneDelta' |
@@ -12,6 +13,7 @@ export type Key = keyof Omit<
   'tertiaryPaletteKeyColor'
 >
 
+/** @beta */
 export type Scheme = Record<Key, number>
 
 /** @internal */
