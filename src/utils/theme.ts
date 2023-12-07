@@ -36,8 +36,11 @@ export type Theme = {
 
 /** @beta */
 export type ExtraThemeOptions = {
+  /** @defaultValue `0` */
+  contrastLevel?: number
   /**
    * Available scheme variants.
+   * @defaultValue `TonalSpot`
    * @see {@link https://github.com/material-foundation/material-color-utilities/blob/main/make_schemes.md#swift-1}
    */
   variant?: 'Content' | 'Expressive' | 'Fidelity' | 'Monochrome' | 'Neutral' | 'TonalSpot' | 'Vibrant'
@@ -56,8 +59,8 @@ export const schemes = {
 
 /** @public */
 export const themeFromSourceColor = (source: number, customColors: CustomColor[] = [], options: ExtraThemeOptions = {}): Theme => {
-  const light = new schemes[options.variant ?? 'TonalSpot'](Hct.fromInt(source), false, 0)
-  const dark = new schemes[options.variant ?? 'TonalSpot'](Hct.fromInt(source), true, 0)
+  const light = new schemes[options.variant ?? 'TonalSpot'](Hct.fromInt(source), false, options.contrastLevel ?? 0)
+  const dark = new schemes[options.variant ?? 'TonalSpot'](Hct.fromInt(source), true, options.contrastLevel ?? 0)
   return {
     customColors: customColors.map(color => customColor(source, color)),
     palettes: {
@@ -77,5 +80,5 @@ export const themeFromSourceColor = (source: number, customColors: CustomColor[]
 }
 
 /** @public */
-export const themeFromImage = async (image: HTMLImageElement, customColors: CustomColor[] = []) => await sourceColorFromImage(image)
-  .then(source => themeFromSourceColor(source, customColors))
+export const themeFromImage = async (image: HTMLImageElement, customColors: CustomColor[] = [], options: ExtraThemeOptions = {}) => await sourceColorFromImage(image)
+  .then(source => themeFromSourceColor(source, customColors, options))
