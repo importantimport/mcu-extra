@@ -1,5 +1,11 @@
 # mcu-extra
 
+## 0.1.0
+
+### Minor Changes
+
+- [`93ec8ac`](https://github.com/importantimport/mcu-extra/commit/93ec8ac9fbfba4f41c36ca8f5a4de5bfc424fd9b) Thanks [@kwaa](https://github.com/kwaa)! - Refactor: use `DynamicScheme`
+
 ## 0.0.5
 
 ### Patch Changes
