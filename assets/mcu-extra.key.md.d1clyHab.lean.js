@@ -1,1 +1,0 @@
-import{_ as s,o as i,c as a,R as t}from"./chunks/framework.00t36RzC.js";const F=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"mcu-extra.key.md","filePath":"mcu-extra.key.md"}'),e={name:"mcu-extra.key.md"},h=t("",4),n=[h];function l(p,k,r,o,y,d){return i(),a("div",null,n)}const g=s(e,[["render",l]]);export{F as __pageData,g as default};
