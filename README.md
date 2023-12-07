@@ -57,7 +57,10 @@ It is automatically generated on update using `api-extractor` and `api-documente
 
 #### Features
 
-- `Scheme & CorePalette`: Tone-based Surfaces (https://github.com/material-foundation/material-color-utilities/issues/98)
+<!-- - `Scheme & CorePalette`: Tone-based Surfaces (https://github.com/material-foundation/material-color-utilities/issues/98) -->
+- `themeFromSourceColor & themeFromImage`:
+  - Migrated to the new `DynamicScheme` with support for Tone-based Surfaces (`surface-container-*`) and Add-ons (`*-fixed, *-fixed-variant, *-fixed-dim`).
+  - Selectable variants and contrast level
 - `applyTheme`: Selectable color formats
 
 #### Changes
@@ -66,7 +69,7 @@ It is automatically generated on update using `api-extractor` and `api-documente
 
 #### Bug fixes
 
-- `Scheme`: Fix onErrorContainer in dark scheme (https://github.com/material-foundation/material-color-utilities/issues/62)
+<!-- - `Scheme`: Fix onErrorContainer in dark scheme (https://github.com/material-foundation/material-color-utilities/issues/62) -->
 - `applyTheme`: Remove unwanted additional paletteKey property from color token with paletteTones (https://github.com/material-foundation/material-color-utilities/pull/93)
 
 ### `@importantimport/material-color-utilities`

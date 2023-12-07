@@ -2,4 +2,4 @@
 "mcu-extra": minor
 ---
 
-Refactor: use DynamicScheme
+Refactor: use `DynamicScheme`
