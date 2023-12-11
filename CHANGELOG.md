@@ -1,5 +1,11 @@
 # mcu-extra
 
+## 0.1.1
+
+### Patch Changes
+
+- [`4f5db13`](https://github.com/importantimport/mcu-extra/commit/4f5db132e12411e030c0d0dd3c96026686be801c) Thanks [@kwaa](https://github.com/kwaa)! - Fix(scheme): return types
+
 ## 0.1.0
 
 ### Minor Changes
