@@ -33,4 +33,4 @@ export const keys = Object.keys(MaterialDynamicColors)
 export const scheme = (scheme: DynamicScheme) =>
   Object.fromEntries(keys.map(key =>
     [key, (MaterialDynamicColors[key] as DynamicColor).getArgb(scheme)],
-  )) as unknown as Record<keyof typeof MaterialDynamicColors, number>
+  )) as unknown as Scheme
